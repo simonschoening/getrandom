@@ -227,8 +227,9 @@ cfg_if! {
                         For more information see: \
                         https://docs.rs/getrandom/#webassembly-support");
     } else {
-        compile_error!("target is not supported, for more information see: \
-                        https://docs.rs/getrandom/#unsupported-targets");
+        // compile_error!("target is not supported, for more information see: \
+        //                 https://docs.rs/getrandom/#unsupported-targets");
+        #[path = "dummy.rs"] mod imp;
     }
 }
 
